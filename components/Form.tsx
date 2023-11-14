@@ -32,14 +32,12 @@ export default function Form() {
     return re.test(email);
   }
 
-  const handleChange = (e: Event & {
-    target: HTMLButtonElement
-  }) => {
+  const handleChange = (e: any) => {
     const { target } = e
     setInputFields({ ...inputFields, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (event: Event) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault();
     setErrors(validateValues(inputFields));
     setSubmitting(true);
