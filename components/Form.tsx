@@ -25,8 +25,8 @@ export default function Form() {
     return errors;
   };
 
-  const validateEmail: boolean = (email: string) => {
-    var re = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+  const validateEmail = (email: string) => {
+    var re = /\S+@\S+\.\S+/;
     return re.test(email);
   }
 
