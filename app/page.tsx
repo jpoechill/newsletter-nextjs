@@ -1,7 +1,17 @@
+'use client'
+
+import { useForm } from "react-hook-form";
 import Image from 'next/image'
 import Link from 'next/link';
-
+import Form from '/components/Form'
 export default function Home() {
+
+  const methods = useForm()
+
+  const onSubmit = methods.handleSubmit(data => {
+    console.log('Hello123')
+  })
+
   return (
     <main className="flex flex-col items-center justify-between md:h-screen">
       <div className='bg-white m-auto md:overflow-hidden md:rounded-[30px] h-full w-full md:w-[930px] md:h-[640px] md:min-h-[640px]'>
@@ -10,15 +20,10 @@ export default function Home() {
           <div className='text-[15px] md:pt-[80px] p-[40px] md:pl-[60px] md:pr-[30px]'>
             <p className='text-[58px] font-bold pb-[25px]'>Stay updated!</p>
             <p className='mb-5'>Join 60,000+ product managers receiving monthly updates on:</p>
-            <p className='my-2'><img src="/icon-list.svg" className="inline mr-3" alt="" />Product discovery and building what matters</p>
-            <p className='my-2'><img src="/icon-list.svg" className="inline mr-3" alt="" />Measuring to ensure updates are a success</p>
-            <p className='my-2'><img src="/icon-list.svg" className="inline mr-3" alt="" />And much more!</p>
-            <p className='mt-10 py-2 font-bold text-xs'>Email address</p>
-            <p className='font-bold text-xs'>Valid email required</p>
-            <input className="border rounded-xl w-full h-[55px] p-5" type="email" name="" id="" placeholder="email@company.com" />
-            <Link href="/about">
-              <button className="rounded-xl bg-[#242642] text-white font-bold w-full h-[55px] p-3 my-5 hover:text-blac hover:bg-gradient-to-r from-[#FA5076] to-[#F86739] hover:shadow-2xl hover:shadow-[#FF5E5C] hover:transition-all">Subscribe to monthly newsletter</button>
-            </Link>
+            <p className='my-2'><Image src="/icon-list.svg" width='20' height="20" className='inline mr-3' alt="Picture of the author" />Product discovery and building what matters</p>
+            <p className='my-2'><Image src="/icon-list.svg" width='20' height="20" className='inline mr-3' alt="Picture of the author" />Measuring to ensure updates are a success</p>
+            <p className='my-2'><Image src="/icon-list.svg" width='20' height="20" className='inline mr-3' alt="Picture of the author" />And much more!</p>
+            <Form />
           </div>
           <div className="h-full  max-h-[640px] p-[20px] hidden md:block">
             <div className='rounded-[20px] fit-img top-0'>
