@@ -18,13 +18,12 @@ export default function Form() {
   const [submitting, setSubmitting] = useState(false);
 
   const validateValues = (inputValues: InputValues) => {
-    let errors = {
-      email: ''
-    };
+    let errors: any = {};
 
     if (!validateEmail(inputValues.email) || inputValues.email.length === '') {
       errors.email = "Email is not valid";
     }
+
     return errors;
   };
 
