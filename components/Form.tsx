@@ -25,7 +25,7 @@ export default function Form() {
     return errors;
   };
 
-  const validateEmail: boolean = (email) => {
+  const validateEmail: boolean = (email: string) => {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
   }
