@@ -6,6 +6,10 @@ interface InputValues {
   email: string;
 }
 
+interface Errors {
+  email?: string;
+}
+
 export default function Form() {
   const methods = useForm()
   const router = useRouter()
@@ -18,7 +22,7 @@ export default function Form() {
   const [submitting, setSubmitting] = useState(false);
 
   const validateValues = (inputValues: InputValues) => {
-    let errors: any = {};
+    let errors: Errors = {}
 
     if (!validateEmail(inputValues.email)) {
       errors.email = "Email is not valid.";
@@ -63,7 +67,11 @@ export default function Form() {
       >
         <div className="grid grid-cols-2 mt-10 py-2">
           <label htmlFor="email" className='font-bold text-xs'>Email address</label>
-
+          {/* {errors.email ? (
+            <label htmlFor="errormsg" className="error font-bold text-xs text-right text-red-500">
+              Valid email required
+            </label>
+          ) : null} */}
         </div>
         <input
           type="email"
