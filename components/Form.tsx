@@ -1,4 +1,4 @@
-import { useForm, FormProvider } from "react-hook-form";
+import { useForm, FormProvider, useNavigate } from "react-hook-form";
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 
@@ -15,7 +15,7 @@ export default function Form() {
 
   const validateValues = (inputValues) => {
     let errors = {};
-    if (!validateEmail(inputValues.email) || inputValues.email.length <= 5) {
+    if (validateEmail(inputValues.email) === false || inputValues.email.length <= 5) {
       errors.email = "Email is not valid";
     }
     return errors;
@@ -38,7 +38,7 @@ export default function Form() {
 
   const finishSubmit = () => {
     console.log(inputFields);
-    router.push('/success')
+    router.push('/success?email=' + inputFields.email);
   };
 
   useEffect(() => {
