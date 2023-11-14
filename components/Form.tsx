@@ -67,11 +67,11 @@ export default function Form() {
       >
         <div className="grid grid-cols-2 mt-10 py-2">
           <label htmlFor="email" className='font-bold text-xs'>Email address</label>
-          {/* {errors.email ? (
+          {errors.email ? (
             <label htmlFor="errormsg" className="error font-bold text-xs text-right text-red-500">
               Valid email required
             </label>
-          ) : null} */}
+          ) : null}
         </div>
         <input
           type="email"
