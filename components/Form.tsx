@@ -32,7 +32,7 @@ export default function Form() {
     return re.test(email);
   }
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.SyntheticEvent): void => {
     setInputFields({ ...inputFields, [e.target.name]: e.target.value });
   };
 
