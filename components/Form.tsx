@@ -18,7 +18,7 @@ export default function Form() {
     email: "",
   });
 
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<Errors>({});
   const [submitting, setSubmitting] = useState(false);
 
   const validateValues = (inputValues: InputValues) => {
