@@ -21,7 +21,7 @@ export default function Form() {
     let errors: any = {};
 
     if (!validateEmail(inputValues.email)) {
-      errors.email = "Email is not valid";
+      errors.email = "Email is not valid.";
     }
 
     return errors;
@@ -29,6 +29,7 @@ export default function Form() {
 
   const validateEmail = (email: string) => {
     var re = /\S+@\S+\.\S+/;
+
     return re.test(email);
   }
 
