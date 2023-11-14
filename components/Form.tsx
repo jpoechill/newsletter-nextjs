@@ -1,6 +1,5 @@
 import { useForm, FormProvider } from "react-hook-form";
 import { useEffect, useState } from "react";
-import * as React from "react";
 import { useRouter } from 'next/navigation';
 
 interface InputValues {
@@ -33,7 +32,7 @@ export default function Form() {
     return re.test(email);
   }
 
-  const handleChange = (e: React.SyntheticEvent): void => {
+  const handleChange = (e: any): void => {
     setInputFields({ ...inputFields, [e.target.name]: e.target.value });
   };
 
