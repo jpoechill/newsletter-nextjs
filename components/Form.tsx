@@ -2,6 +2,10 @@ import { useForm, FormProvider } from "react-hook-form";
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 
+interface InputValues {
+  email: string;
+}
+
 export default function Form() {
   const methods = useForm()
   const router = useRouter()
@@ -13,7 +17,7 @@ export default function Form() {
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
 
-  const validateValues = (inputValues) => {
+  const validateValues = (inputValues: InputValues) => {
     let errors = {};
     if (validateEmail(inputValues.email) === false || inputValues.email.length <= 5) {
       errors.email = "Email is not valid";
@@ -21,7 +25,7 @@ export default function Form() {
     return errors;
   };
 
-  const validateEmail = (email) => {
+  const validateEmail: boolean = (email) => {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
   }
