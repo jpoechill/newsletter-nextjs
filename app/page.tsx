@@ -3,7 +3,7 @@
 import { useForm } from "react-hook-form";
 import Image from 'next/image'
 import Link from 'next/link';
-import Form from '/components/Form'
+import Form from '../components/Form'
 export default function Home() {
 
   const methods = useForm()
