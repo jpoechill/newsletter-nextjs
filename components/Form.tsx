@@ -19,7 +19,7 @@ export default function Form() {
 
   const validateValues = (inputValues: InputValues) => {
     let errors = {};
-    if (validateEmail(inputValues.email) === false || inputValues.email.length <= 5) {
+    if (!validateEmail(inputValues.email) || inputValues.email.length <= 5) {
       errors.email = "Email is not valid";
     }
     return errors;
